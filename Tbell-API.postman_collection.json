@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "f239fc54-a36f-4c15-ba16-40fc8ecd20bd",
+		"name": "Tbell-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User_Create_API",
+			"item": [
+				{
+					"name": "CREATE-TC01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "759e8057-b94b-47fd-8846-dd952638389d",
+								"exec": [
+									"pm.test(\"Status test\", function() {",
+									"   pm.response.to.have.status(200); ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"transaction_time\": \"2020-06-26T11:00:00.000\",\n    \"data\": {\n        \"account\": \"test_user01\",\n        \"password\": \"test_passwd01\",\n        \"status\": \"UNREGISTERED\",\n        \"email\": \"test_user@tbell.co.kr\",\n        \"phone_number\": \"010-1234-5678\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://13.125.232.37:8090/testapi/api/user",
+							"protocol": "http",
+							"host": [
+								"13",
+								"125",
+								"232",
+								"37"
+							],
+							"port": "8090",
+							"path": [
+								"testapi",
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User_Read_API",
+			"item": [
+				{
+					"name": "READ-TC01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7c1b39ab-eb8c-4a61-987f-9989df735117",
+								"exec": [
+									"pm.test(\"Status test\", function() {",
+									"   pm.response.to.have.status(200); ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://13.125.232.37:8090/testapi/api/user/1",
+							"protocol": "http",
+							"host": [
+								"13",
+								"125",
+								"232",
+								"37"
+							],
+							"port": "8090",
+							"path": [
+								"testapi",
+								"api",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User_Update_API",
+			"item": [
+				{
+					"name": "UPDATE-TC01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cf727775-7836-4b32-b1e0-cd9ddecdc92c",
+								"exec": [
+									"pm.test(\"Status test\", function() {",
+									"   pm.response.to.have.status(200); ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"transaction_time\": \"2020-06-26T11:01:00.000\",\n    \"data\": {\n        \"id\": 2,\n        \"account\": \"update_user\",\n        \"password\": \"update_passwd\",\n        \"status\": \"REGISTERED\",\n        \"email\": \"updateuser@tbell.co.kr\",\n        \"phone_number\": \"010-1111-0001\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://13.125.232.37:8090/testapi/api/user",
+							"protocol": "http",
+							"host": [
+								"13",
+								"125",
+								"232",
+								"37"
+							],
+							"port": "8090",
+							"path": [
+								"testapi",
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User_Delete_API",
+			"item": [
+				{
+					"name": "DELETE-TC01",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a6a6e03c-ad62-44b6-8c34-6dd87279bf7d",
+								"exec": [
+									"pm.test(\"Status test\", function() {",
+									"   pm.response.to.have.status(200); ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://13.125.232.37:8090/testapi/api/user/2",
+							"protocol": "http",
+							"host": [
+								"13",
+								"125",
+								"232",
+								"37"
+							],
+							"port": "8090",
+							"path": [
+								"testapi",
+								"api",
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b5a0e77a-a456-4e29-9bff-dfe365ee7fcb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "69858914-36d1-424b-894e-8ec90328feb5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
