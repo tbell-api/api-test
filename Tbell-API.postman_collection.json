@@ -12,7 +12,7 @@
 					"name": "CREATE-TC01",
 					"event": [
 						{
-							"listen": "test",
+							"listen": "test1",
 							"script": {
 								"id": "759e8057-b94b-47fd-8846-dd952638389d",
 								"exec": [
